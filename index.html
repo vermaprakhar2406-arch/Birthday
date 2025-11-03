@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Pari! 🎉</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Page 1: Countdown -->
+    <div id="page1" class="page active">
+        <div class="countdown-container">
+            <div id="countdown" class="countdown">3</div>
+            <div class="subtitle">Today is your special day</div>
+        </div>
+    </div>
+
+    <!-- Page 2: Birthday Message -->
+    <div id="page2" class="page">
+        <div class="content-container">
+            <img src="https://media.giphy.com/media/g5R9dok94mrIvplmZd/giphy.gif" alt="Birthday GIF" class="birthday-gif">
+            <div class="message-text">A Cutie pie was born 21 years ago</div>
+            <div class="sub-message">Yes it's you... My Cutie... PARI❤️❤️</div>
+            <button class="action-button" onclick="goToPage3()">Start the surprise</button>
+        </div>
+    </div>
+
+    <!-- Page 3: Interactive Cake -->
+    <div id="page3" class="page">
+        <audio id="bgMusic" loop>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        </audio>
+        
+        <div class="cake-container">
+            <div id="birthdayText" class="birthday-text hidden">Happy Birthday Cutiee</div>
+            
+            <div id="decorations" class="decorations hidden">
+                <div class="decoration dec1">🎈</div>
+                <div class="decoration dec2">🎊</div>
+                <div class="decoration dec3">🎉</div>
+                <div class="decoration dec4">✨</div>
+                <div class="decoration dec5">🎈</div>
+                <div class="decoration dec6">🎊</div>
+            </div>
+
+            <canvas id="confettiCanvas" class="confetti-canvas"></canvas>
+            
+            <div class="cake">
+                <div id="candle" class="candle hidden">
+                    <div class="flame"></div>
+                    <div class="wick"></div>
+                </div>
+                <div class="cake-top"></div>
+                <div class="cake-middle"></div>
+                <div class="cake-bottom"></div>
+            </div>
+            
+            <button id="cakeButton" class="action-button" onclick="handleCakeAction()">Decorate</button>
+        </div>
+    </div>
+
+    <!-- Page 4: Pop Balloons -->
+    <div id="page4" class="page">
+        <div class="balloons-container">
+            <div class="balloon balloon1" onclick="popBalloon(this)">
+                <div class="balloon-body"></div>
+                <div class="balloon-string"></div>
+            </div>
+            <div class="balloon balloon2" onclick="popBalloon(this)">
+                <div class="balloon-body"></div>
+                <div class="balloon-string"></div>
+            </div>
+            <div class="balloon balloon3" onclick="popBalloon(this)">
+                <div class="balloon-body"></div>
+                <div class="balloon-string"></div>
+            </div>
+            <div class="balloon balloon4" onclick="popBalloon(this)">
+                <div class="balloon-body"></div>
+                <div class="balloon-string"></div>
+            </div>
+        </div>
+        <canvas id="balloonConfetti" class="confetti-canvas"></canvas>
+        <button id="nextButton" class="action-button hidden" onclick="goToPage5()">Next</button>
+    </div>
+
+    <!-- Page 5: Photo Gallery -->
+    <div id="page5" class="page">
+        <div class="photos-container" id="photosContainer">
+            <img src="https://picsum.photos/300/400?random=1" class="photo photo1" onclick="openPhoto(this)">
+            <img src="https://picsum.photos/350/300?random=2" class="photo photo2" onclick="openPhoto(this)">
+            <img src="https://picsum.photos/320/380?random=3" class="photo photo3" onclick="openPhoto(this)">
+            <img src="https://picsum.photos/340/320?random=4" class="photo photo4" onclick="openPhoto(this)">
+            <img src="https://picsum.photos/310/360?random=5" class="photo photo5" onclick="openPhoto(this)">
+            <img src="https://picsum.photos/330/340?random=6" class="photo photo6" onclick="openPhoto(this)">
+        </div>
+        
+        <div id="photoModal" class="photo-modal hidden" onclick="closePhoto()">
+            <img id="modalImage" src="" alt="Enlarged photo">
+        </div>
+        
+        <button class="action-button" onclick="goToPage6()">My message for youu....</button>
+    </div>
+
+    <!-- Page 6: Birthday Card -->
+    <div id="page6" class="page">
+        <div class="card-container">
+            <div class="birthday-card">
+                <div class="card-content">
+                    <div class="card-title">Happy Birthday</div>
+                    <div class="card-message">Happy Birthdayy to you Pariii.... I love you so so much😊😊</div>
+                    <div class="card-hearts">❤️ ❤️ ❤️</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
